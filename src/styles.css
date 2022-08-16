@@ -1,0 +1,12 @@
+.icono{
+    height: 75px;
+}
+.link{
+    color: antiquewhite !important;
+    margin-left: 25px !important;
+    font-size: 25px !important;
+}
+
+#basic-nav-dropdown{
+    color: antiquewhite;
+}
