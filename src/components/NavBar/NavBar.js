@@ -4,12 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../../styles.css'
 import icono from '../../img/icono.png'
+import Carrito from '../cartwidget/cartwidget'
 
 function BasicExample() {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img className="icono" src={icono} alt="icono"></img></Navbar.Brand>
+        <Navbar.Brand href="#home"><img className="icono" src={icono} alt="icono"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -26,7 +27,10 @@ function BasicExample() {
                 Tazas
               </NavDropdown.Item>
             </NavDropdown>
+            
+
           </Nav>
+          <Carrito></Carrito>
         </Navbar.Collapse>
       </Container>
     </Navbar>
