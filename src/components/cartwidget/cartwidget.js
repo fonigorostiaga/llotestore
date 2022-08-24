@@ -1,4 +1,4 @@
-import imgCarrito from '../../img/carrito.png'
+import imgCarrito from '../../assets/carrito.png'
 
 function carrito(){
     return(

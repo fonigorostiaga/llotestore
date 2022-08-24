@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../../styles.css'
-import icono from '../../img/icono.png'
+import icono from '../../assets/icono.png'
 import Carrito from '../cartwidget/cartwidget'
 
 function BasicExample() {
