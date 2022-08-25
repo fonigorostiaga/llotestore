@@ -28,20 +28,42 @@
 }
 .contenedor{
     background-color:#212529 ;
-    border: solid 2px;
+    
     border-radius: 15px;
     padding:15px  ;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     color: antiquewhite;
-
+    height: fit-content;
 }
 .contenedorCounter{
     display: flex;
     align-items: center;
     justify-content: center;
     
+}
+
+.contenedorDeTarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contenedorCatalogo{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    border:solid 1px black;
+    border-radius: 15px;
+    margin: 25px;
+    padding: 15px;
+    background:linear-gradient(#97858b6b,#0500026b);
+}
+.contenedorCatalogo:hover{
+    transform: scale(1.02,1.02);
+    transition: 0.15s;
+    background-color: #97858bee;
 }
 .botonCounter{
 margin: 0px 10px;
@@ -74,6 +96,17 @@ background-color:antiquewhite;
     border: solid 1px;
     color: rgb(3, 0, 0);
     font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
 
 
+}
+button:hover{
+    background-color: rgb(3, 0, 0);
+    color: antiquewhite;
+    transition: 0.25s;
+}
+
+.imgProducto{
+    width: 200px;
 }

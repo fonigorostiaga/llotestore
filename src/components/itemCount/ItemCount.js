@@ -19,7 +19,7 @@ function ItemCount({initial,stock, onAdd} ) {
         setCounter(counter-1)}
     }
   return (
-    <div className='contenedor'>ItemCount
+    <div className='contenedor'>
         
             <p>Cantidad: {counter}</p>
             <div className='contenedorCounter'> 
@@ -27,7 +27,7 @@ function ItemCount({initial,stock, onAdd} ) {
             
             <button className="botonCounter" onClick={restar}>-</button>
         </div>
-        <button className="botonAdd"onClick={()=>(onAdd(counter))}>Agregar al carrito</button>
+        <button className="botonAdd"onClick={()=>(onAdd(counter))}>Agregar</button>
     </div>
   )
 }
