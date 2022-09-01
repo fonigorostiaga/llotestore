@@ -50,7 +50,10 @@
     justify-content: center;
 }
 .contenedorCatalogo{
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+    "h5 h5"
+    "imagen counter";
     width: fit-content;
     justify-content: center;
     align-items: center;
@@ -59,6 +62,9 @@
     margin: 25px;
     padding: 15px;
     background:linear-gradient(#97858b6b,#0500026b);
+}
+.nombreProducto{
+    grid-area: h5;
 }
 .contenedorCatalogo:hover{
     transform: scale(1.02,1.02);
@@ -107,6 +113,40 @@ button:hover{
     transition: 0.25s;
 }
 
-.imgProducto{
+.imgProducto, .imagenDetail{
     width: 200px;
+}
+.contenedorDetail{
+    border: solid 1px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+}
+.textosDetail{
+    width: 30%;
+    grid-area: textos;
+    display: inline-block;
+    vertical-align: middle
+}
+.imagenDetail{
+    width: 30%;
+    grid-area: imagen;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.counterDetail{
+    width: 30%;
+    grid-area: counter;
+    display: inline-block;
+    vertical-align: middle
+}
+.tarjetaDetail{
+    display: block;
 }

@@ -2,78 +2,84 @@ import '../../styles.css'
 import { Tarjetas } from '../Tarjetas/Tarjetas'
 import remeraHombreArya from '../../assets/remeraHombreAryaStark.png'
 import remeraHombreDaVinci from '../../assets/remeraHombreDaVinci.png'
+import remeraHombre from '../../assets/remeraHombre.png'
+import remeraHombreLloteAzul from '../../assets/remeraHombreLloteAzul.png'
+import remeraHombreLloteRelax from '../../assets/remeraHombreLloteRelax.png'
+import remeraHombreLloteCubo from '../../assets/remeraHombreLloteCubo.png'
+import remeraLluvia from '../../assets/remeraHombreLluviablanca.png'
+import remeraPixelada from '../../assets/remeraPixelada.png'
 import React, { useState, useEffect } from 'react'
 const arrayproductos=[
     {
         item:1,
-        nombre: "remeraHombreArya",
-        producto:"Remera Hombre",
-        descripcion:"Remera Arya Stark ",
+        nombre: "Remera Arya Llote",
+        producto:"Remera",
+        descripcion:"Remera 100% algodon de algodon con cuello abierto y la imagen de Arya Llote, salvadora de los 7 reinos",
         precio:1500,
         imagen:remeraHombreArya,
         stock:15
     },
     {
         item:2,
-        nombre: "remeraHombreSpiderman",
-        producto:"Remera Hombre",
-        descripcion:"Remera SpiderMan ",
+        nombre: "Remera LloteStudio",
+        producto:"Remera logo Llote",
+        descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio Naranja",
         precio:1500,
-        imagen:remeraHombreDaVinci,
+        imagen:remeraHombre,
         stock:15
     },
     {
         item:3,
-        nombre: "remeraHombreHulk",
-        producto:"Remera Hombre",
-        descripcion:"Remera Hulk ",
+        nombre: "Remera Leonardo Da Llote",
+        producto:"Remera oversize, 100% algodon con estampado de Leonardo Da Llote",
+        descripcion:"Remera davinci ",
         precio:1500,
-        imagen:remeraHombreArya,
+        imagen:remeraHombreDaVinci,
         stock:15
     },
     {
         item:4,
-        nombre: "remeraHombreTioSam",
-        producto:"Remera Hombre",
-        descripcion:"Remera Tio Sam ",
+        nombre: "Remera LloteStudio Azul",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio a color en base azul",
         precio:1500,
-        imagen:remeraHombreDaVinci,
+        imagen:remeraHombreLloteAzul,
         stock:15
     },
     {
         item:5,
-        nombre: "remeraHombreLlote",
-        producto:"Remera Hombre",
-        descripcion:"Remera Llotestudio ",
+        nombre: "Remera Llote and chill",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio chillin'",
         precio:1500,
-        imagen:remeraHombreArya,
+        imagen:remeraHombreLloteRelax,
         stock:15
     },
     {
         item:6,
-        nombre: "remeraHombreDavinci",
-        producto:"Remera Hombre",
-        descripcion:"Remera Leo Davinci ",
+        nombre: "Remera Llote cubico",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio cubico",
         precio:1500,
-        imagen:remeraHombreDaVinci,
+        imagen:remeraHombreLloteCubo,
         stock:15
     },
     {
         item:7,
-        nombre: "remeraHombreMessi",
-        producto:"Remera Hombre",
+        nombre: "Remera Llote Lluvia",
+        producto:"Remera",
         descripcion:"Remera Lio Messi",
         precio:1500,
-        imagen:remeraHombreArya,
+        imagen:remeraLluvia,
         stock:15
     },
     {
         item:8,
-        nombre: "remeraHombreDiegote",
-        producto:"Remera Hombre",
-        descripcion:"Remera Diegote",
+        nombre: "Remera Pixelada",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio Pixelado",
         precio:1500,
-        imagen:remeraHombreDaVinci,
+        imagen:remeraPixelada,
         stock:15
     }
 ]
@@ -109,9 +115,9 @@ return(
             <Tarjetas propiedad={producto[1]}/>
             <Tarjetas propiedad={producto[3]}/> */}
             {
-                producto.map((remera)=>{
+                producto.map((item)=>{
                     return(
-                    <Tarjetas propiedad={remera}/>)
+                    <Tarjetas propiedad={item}/>)
                 })
             }
 
