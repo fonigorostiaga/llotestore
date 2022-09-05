@@ -16,11 +16,10 @@ function App() {
       <Route path='/productos' element={<ItemContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
       <Route path='/productos/:tipoProducto' element={<ItemContainer/>}/>
-      <Route path='/productos/buzos' element={<ItemContainer/>}/>
       <Route path='/productos/stickers' element={<ItemContainer/>}/>
-      <Route path='/productos/:item'element={<ItemDetailContainer/>}/>
+      <Route path='/productos/item/:itemProducto'element={<ItemDetailContainer/>}/>
 
-      <Route />
+      
 
       
       {/* <ItemContainer/>

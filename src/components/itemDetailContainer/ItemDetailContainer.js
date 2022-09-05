@@ -3,14 +3,20 @@ import getProductos from '../../helper/helper'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
+
+
 export const ItemDetailContainer = () => {
-    const {item}=useParams()
+    const {itemProducto}=useParams()
     const [productoState, setProductoState]=useState({})
+  console.log('itemproducto',itemProducto)
+
+
     useEffect(()=>{
+      
         const funcionAsincrona=async()=>{
             const peticion=await getProductos();
             console.log('peticion',peticion)
-            const productoFiltrado=peticion.find(prod=>prod.item===item)
+            const productoFiltrado=peticion.find(prod=>prod.item===parseInt(itemProducto))
             
             setProductoState(productoFiltrado)
             

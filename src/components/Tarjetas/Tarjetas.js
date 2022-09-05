@@ -11,7 +11,7 @@ export const Tarjetas = ({propiedad}) => {
     }
 
   return (
-<Link to={`/productos/${propiedad.item}`} className="linkTarjeta">
+<Link to={`/productos/item/${propiedad.item}`} className="linkTarjeta">
 <card className='contenedorCatalogo'>
       <h5 className='nombreProducto'>{propiedad.nombre}</h5>
         <div className='cardContainer'>

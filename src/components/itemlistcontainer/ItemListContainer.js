@@ -10,6 +10,8 @@ import remeraLluvia from '../../assets/remeraHombreLluviablanca.png'
 import remeraPixelada from '../../assets/remeraPixelada.png'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import getProductos from '../../helper/helper'
+
 const arrayproductos=[
     {
         item:1,
@@ -88,19 +90,20 @@ const arrayproductos=[
 export const ItemContainer=()=>{
     const {tipoProducto}=useParams()
     const [producto, setProducto]=useState([])
-    const obtenerProductos=()=>{
-        return new Promise((resolve,reject)=>{
-            setTimeout(() => {
-                resolve(arrayproductos)
+    // const obtenerProductos=()=>{
+    //     return new Promise((resolve,reject)=>{
+    //         setTimeout(() => {
+    //             resolve(arrayproductos)
                 
-            }, 2500);
-        })
-    }
+    //         }, 2500);
+    //     })
+    // }
 
     useEffect(()=>{
+        
         const funcionAsincrona=async()=>{
             try {
-                const catalogo=await obtenerProductos()
+                const catalogo=await getProductos()
                 if(tipoProducto===undefined){
                     setProducto(catalogo)
                 }else{

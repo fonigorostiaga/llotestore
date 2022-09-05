@@ -118,6 +118,7 @@ button:hover{
     width: 200px;
 }
 .contenedorDetail{
+    margin-top: 35px;
     border: solid 1px;
     width: 50%;
     margin-left: auto;
@@ -153,4 +154,8 @@ button:hover{
 }
 .linkTarjeta{
     text-decoration: none;
+}
+.imagenDetail:hover{
+    transform: scale(2,2);
+    transition: 1.2s
 }

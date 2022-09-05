@@ -6,12 +6,14 @@ import remeraHombreLloteRelax from '../assets/remeraHombreLloteRelax.png'
 import remeraHombreLloteCubo from '../assets/remeraHombreLloteCubo.png'
 import remeraLluvia from '../assets/remeraHombreLluviablanca.png'
 import remeraPixelada from '../assets/remeraPixelada.png'
+import buzoSanLlotinBlanco from '../assets/BuzoSanLlotinBlanco.png'
+import buzoSanLlotinGris from '../assets/BuzoSanLlotinGris.png'
 // import remeraLloteLluvia from '../assets/remeraHombreLluviaBlanca.png'
 const productos=[
     {
         item:1,
         nombre: "Remera Arya Llote",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera 100% algodon de algodon con cuello abierto y la imagen de Arya Llote, salvadora de los 7 reinos",
         precio:1500,
         imagen:remeraHombreArya,
@@ -47,7 +49,7 @@ const productos=[
     {
         item:5,
         nombre: "Remera Llote and chill",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera oversize 100% algodon con estampado LloteStudio chillin'",
         precio:1500,
         imagen:remeraHombreLloteRelax,
@@ -56,7 +58,7 @@ const productos=[
     {
         item:6,
         nombre: "Remera Llote cubico",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera oversize 100% algodon con estampado LloteStudio cubico",
         precio:1500,
         imagen:remeraHombreLloteCubo,
@@ -65,7 +67,7 @@ const productos=[
     {
         item:7,
         nombre: "Remera Llote Lluvia",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera Lio Messi",
         precio:1500,
         imagen:remeraLluvia,
@@ -74,10 +76,28 @@ const productos=[
     {
         item:8,
         nombre: "Remera Pixelada",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera oversize 100% algodon con estampado LloteStudio Pixelado",
         precio:1500,
         imagen:remeraPixelada,
+        stock:15
+    },
+    {
+        item:9,
+        nombre: "Buzo San Llotin",
+        producto:"buzos",
+        descripcion:"Buzo cangurito con capucha, color gris, imagen de San Llotin que te ayudara a buscar a tu media Llotenaranja",
+        precio:1500,
+        imagen:buzoSanLlotinGris,
+        stock:15
+    },
+    {
+        item:10,
+        nombre: "Buzo San Llotin",
+        producto:"buzos",
+        descripcion:"Buzo cangurito con capucha, color blanco, imagen de San Llotin que te ayudara a buscar a tu media Llotenaranja",
+        precio:1500,
+        imagen:buzoSanLlotinBlanco,
         stock:15
     }
 ]
@@ -86,7 +106,7 @@ const getProductos =()=>{
         setTimeout(()=>{
             resolve(productos);
             reject(error=>console.log(error))
-        },2000)
+        },1000)
     })
 }
 export default getProductos
