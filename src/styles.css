@@ -62,6 +62,7 @@
     margin: 25px;
     padding: 15px;
     background:linear-gradient(#97858b6b,#0500026b);
+    color: #212529 ;
 }
 .nombreProducto{
     grid-area: h5;
@@ -149,4 +150,7 @@ button:hover{
 }
 .tarjetaDetail{
     display: block;
+}
+.linkTarjeta{
+    text-decoration: none;
 }

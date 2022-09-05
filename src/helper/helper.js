@@ -10,8 +10,8 @@ import remeraPixelada from '../assets/remeraPixelada.png'
 const productos=[
     {
         item:1,
-        nombre: "Remera Hombre Arya Llote",
-        producto:"Remera Hombre",
+        nombre: "Remera Arya Llote",
+        producto:"Remera",
         descripcion:"Remera 100% algodon de algodon con cuello abierto y la imagen de Arya Llote, salvadora de los 7 reinos",
         precio:1500,
         imagen:remeraHombreArya,
@@ -19,8 +19,8 @@ const productos=[
     },
     {
         item:2,
-        nombre: "Remera Hombre LloteStudio",
-        producto:"Remera Hombre logo Llote",
+        nombre: "Remera LloteStudio",
+        producto:"remeras",
         descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio Naranja",
         precio:1500,
         imagen:remeraHombre,
@@ -28,36 +28,36 @@ const productos=[
     },
     {
         item:3,
-        nombre: "Remera Hombre Leonardo Da Llote",
-        producto:"Remera Hombre oversize, 100% algodon con estampado de Leonardo Da Llote",
-        descripcion:"Remera davinci ",
+        nombre: "Remera Leonardo Da Llote",
+        producto:"remeras",
+        descripcion:"Remera oversize, 100% algodon con estampado de Leonardo Da Llote",
         precio:1500,
         imagen:remeraHombreDaVinci,
         stock:15
     },
     {
         item:4,
-        nombre: "Remera Hombre LloteStudio Azul",
-        producto:"Remera Hombre",
-        descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio a color en base azul",
+        nombre: "Remera LloteStudio Azul",
+        producto:"remeras",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio a color en base azul",
         precio:1500,
         imagen:remeraHombreLloteAzul,
         stock:15
     },
     {
         item:5,
-        nombre: "Remera Hombre Llote and chill",
-        producto:"Remera Hombre",
-        descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio chillin'",
+        nombre: "Remera Llote and chill",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio chillin'",
         precio:1500,
         imagen:remeraHombreLloteRelax,
         stock:15
     },
     {
         item:6,
-        nombre: "Remera Hombre Llote cubico",
-        producto:"Remera Hombre",
-        descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio cubico",
+        nombre: "Remera Llote cubico",
+        producto:"Remera",
+        descripcion:"Remera oversize 100% algodon con estampado LloteStudio cubico",
         precio:1500,
         imagen:remeraHombreLloteCubo,
         stock:15

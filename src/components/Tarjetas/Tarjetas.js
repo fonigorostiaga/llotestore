@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../styles.css'
 import ItemCount from '../itemCount/ItemCount'
+import {Link}from 'react-router-dom'
 
 
 export const Tarjetas = ({propiedad}) => {
@@ -10,7 +11,8 @@ export const Tarjetas = ({propiedad}) => {
     }
 
   return (
-    <card className='contenedorCatalogo'>
+<Link to={`/productos/${propiedad.item}`} className="linkTarjeta">
+<card className='contenedorCatalogo'>
       <h5 className='nombreProducto'>{propiedad.nombre}</h5>
         <div className='cardContainer'>
             
@@ -19,5 +21,6 @@ export const Tarjetas = ({propiedad}) => {
         </div>    
         <ItemCount stock={propiedad.stock} initial={0} onAdd={agregarAlCarrito} />
     </card>
+    </Link>
   )
 }

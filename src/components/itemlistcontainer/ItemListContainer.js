@@ -9,6 +9,7 @@ import remeraHombreLloteCubo from '../../assets/remeraHombreLloteCubo.png'
 import remeraLluvia from '../../assets/remeraHombreLluviablanca.png'
 import remeraPixelada from '../../assets/remeraPixelada.png'
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 const arrayproductos=[
     {
         item:1,
@@ -22,7 +23,7 @@ const arrayproductos=[
     {
         item:2,
         nombre: "Remera LloteStudio",
-        producto:"Remera logo Llote",
+        producto:"Remera",
         descripcion:"Remera Hombre oversize 100% algodon con estampado LloteStudio Naranja",
         precio:1500,
         imagen:remeraHombre,
@@ -31,8 +32,8 @@ const arrayproductos=[
     {
         item:3,
         nombre: "Remera Leonardo Da Llote",
-        producto:"Remera oversize, 100% algodon con estampado de Leonardo Da Llote",
-        descripcion:"Remera davinci ",
+        producto:"Remera",
+        descripcion:"Remera oversize, 100% algodon con estampado de Leonardo Da Llote",
         precio:1500,
         imagen:remeraHombreDaVinci,
         stock:15
@@ -40,7 +41,7 @@ const arrayproductos=[
     {
         item:4,
         nombre: "Remera LloteStudio Azul",
-        producto:"Remera",
+        producto:"remeras",
         descripcion:"Remera oversize 100% algodon con estampado LloteStudio a color en base azul",
         precio:1500,
         imagen:remeraHombreLloteAzul,
@@ -85,6 +86,7 @@ const arrayproductos=[
 ]
 
 export const ItemContainer=()=>{
+    const {tipoProducto}=useParams()
     const [producto, setProducto]=useState([])
     const obtenerProductos=()=>{
         return new Promise((resolve,reject)=>{
@@ -99,14 +101,20 @@ export const ItemContainer=()=>{
         const funcionAsincrona=async()=>{
             try {
                 const catalogo=await obtenerProductos()
-                setProducto(catalogo)
-                console.log(catalogo)
+                if(tipoProducto===undefined){
+                    setProducto(catalogo)
+                }else{
+                    const productosFiltrados=catalogo.filter(el=>el.producto===tipoProducto)
+                    console.log('nuevalista',productosFiltrados)
+                    setProducto(productosFiltrados)
+                    console.log(catalogo)
+                }
             } catch (error) {
                 alert("hubo un error")
             }
         }
         funcionAsincrona();
-    },[])
+    },[tipoProducto])
 
 return(
     <>
