@@ -52,8 +52,8 @@
 .contenedorCatalogo{
     display: grid;
     grid-template-areas: 
-    "h5 h5"
-    "imagen counter";
+    "h5"
+    "imagen";
     width: fit-content;
     justify-content: center;
     align-items: center;
@@ -63,6 +63,7 @@
     padding: 15px;
     background:linear-gradient(#97858b6b,#0500026b);
     color: #212529 ;
+    text-align: center;
 }
 .nombreProducto{
     grid-area: h5;
@@ -158,4 +159,40 @@ button:hover{
 .imagenDetail:hover{
     transform: scale(2,2);
     transition: 1.2s
+}
+
+.backGroundModal{
+    background-color: rgba(0, 0, 0, 0.493);
+    top:0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:35px;
+}
+.detalleModal{
+    background-color: white;
+        border-radius:15px ;
+        padding: 40px;
+        position: relative;
+}
+.botonComprar{
+    background-color:rgba(247, 245, 245, 0.599) ;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cardContainer{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.cerrar{
+    position:absolute;
+    top:2%;
+    right: 2%;
+    
 }

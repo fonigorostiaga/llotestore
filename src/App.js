@@ -4,6 +4,7 @@ import {ItemContainer} from './components/itemlistcontainer/ItemListContainer';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route}from 'react-router-dom'
 import { Contacto } from './components/contacto/Contacto';
+import ItemCount from './components/itemCount/ItemCount';
 function App() {
   return (
   <BrowserRouter>
@@ -16,15 +17,14 @@ function App() {
       <Route path='/productos' element={<ItemContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
       <Route path='/productos/:tipoProducto' element={<ItemContainer/>}/>
-      <Route path='/productos/stickers' element={<ItemContainer/>}/>
+      <Route path='/productos/s tickers' element={<ItemContainer/>}/>
       <Route path='/productos/item/:itemProducto'element={<ItemDetailContainer/>}/>
 
       
 
-      
-      {/* <ItemContainer/>
-    <ItemDetailContainer/> */}
     </Routes> 
+
+  
     </div>
 
     </BrowserRouter> 

@@ -3,7 +3,7 @@ import {useState}from 'react'
 import '../../styles.css'
 function ItemCount({initial,stock, onAdd} ) {
     
-    const [counter, setCounter]=useState(1)
+    const [counter, setCounter]=useState(0)
     const sumar=()=>{
         if(counter===stock){
             alert("UPS, parece que no hay mas de este producto")
