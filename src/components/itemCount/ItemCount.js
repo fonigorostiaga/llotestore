@@ -18,6 +18,7 @@ function ItemCount({initial,stock, onAdd} ) {
         }else{
         setCounter(counter-1)}
     }
+
   return (
     <div className='contenedor'>
         
@@ -27,7 +28,7 @@ function ItemCount({initial,stock, onAdd} ) {
             
             <button className="botonCounter" onClick={restar}>-</button>
         </div>
-        <button className="botonAdd"onClick={()=>(onAdd(counter))}>Agregar</button>
+        <button className="botonAdd"onClick={()=>onAdd(counter)}>Agregar</button>
     </div>
   )
 }

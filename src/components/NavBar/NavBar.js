@@ -4,10 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../../styles.css'
 import icono from '../../assets/icono.png'
-import Carrito from '../cartwidget/cartwidget'
 import {Outlet, Link} from 'react-router-dom'
+import { CarritoWidget } from '../cartwidget/CarritoWidget';
 
-function BasicExample() {
+function BasicExample({cantidadItems}) {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
@@ -31,7 +31,7 @@ function BasicExample() {
             
 
           </Nav>
-          <Carrito></Carrito>
+            <CarritoWidget cantidadItems={cantidadItems}/>
         </Navbar.Collapse>
       </Container>
     </Navbar>
