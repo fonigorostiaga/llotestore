@@ -122,9 +122,7 @@ export const ItemContainer=()=>{
 return(
     <>
         <div className='contenedorDeTarjetas'>
-            {/* <Tarjetas propiedad={producto[0]}/>
-            <Tarjetas propiedad={producto[1]}/>
-            <Tarjetas propiedad={producto[3]}/> */}
+
             {
                 producto.map((item)=>{
                     return(

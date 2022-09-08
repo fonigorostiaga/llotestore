@@ -7,7 +7,7 @@ import icono from '../../assets/icono.png'
 import {Outlet, Link} from 'react-router-dom'
 import { CarritoWidget } from '../cartwidget/CarritoWidget';
 
-function BasicExample({cantidadItems}) {
+function BasicExample() {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
@@ -31,7 +31,7 @@ function BasicExample({cantidadItems}) {
             
 
           </Nav>
-            <CarritoWidget cantidadItems={cantidadItems}/>
+            <CarritoWidget/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

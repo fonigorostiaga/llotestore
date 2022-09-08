@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-export const ItemDetailContainer = ({agregarAlCarrito}) => {
+export const ItemDetailContainer = () => {
     const {itemProducto}=useParams()
     const [productoState, setProductoState]=useState({})
 
@@ -30,7 +30,7 @@ export const ItemDetailContainer = ({agregarAlCarrito}) => {
 
   return (
     <div>
-    <ItemDetail agregarAlCarrito={agregarAlCarrito} producto={productoState}/>
+    <ItemDetail producto={productoState}/>
     </div>
   )
 }

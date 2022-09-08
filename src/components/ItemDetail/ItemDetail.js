@@ -2,8 +2,19 @@ import {React} from 'react'
 import ItemCount from '../itemCount/ItemCount'
 import '../../styles.css'
 import { useState } from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../Context/CartContext'
 
-export const ItemDetail = ({producto, agregarAlCarrito}) => {
+export const ItemDetail = ({producto}) => {
+  const {sumaProductosAlCarrito}=useContext(CartContext)
+
+  const agregarAlCarrito=(counter)=>{
+    alert('cantidad items en detail: '+counter)
+    const nuevoProducto={...producto,cantidad:counter}
+    console.log(nuevoProducto)
+    sumaProductosAlCarrito(nuevoProducto)
+
+}
 
   return (
     <div className='contenedorDetail'>
