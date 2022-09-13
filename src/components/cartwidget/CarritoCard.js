@@ -26,7 +26,7 @@ export const CarritoCard = ({item}) => {
                     <p>Cantidad: {item.cantidad}</p>
                     <p>Precio: {item.precio}</p>
                 </div>
-                <button className="botonEliminarProducto" onClick={()=>eliminarProducto(item.item)}>Eliminar</button>
+                <button className="botonEliminarProducto" onClick={()=>eliminarProducto(item)}>Eliminar</button>
             </div>
         
         </>

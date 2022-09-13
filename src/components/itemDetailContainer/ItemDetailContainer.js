@@ -8,13 +8,15 @@ import { useParams } from 'react-router-dom'
 export const ItemDetailContainer = () => {
     const {itemProducto}=useParams()
     const [productoState, setProductoState]=useState({})
-
+  const [loading, setLoading]=useState(true)
   console.log('itemproducto',itemProducto)
 
 
     useEffect(()=>{
-      
+      setTimeout(() => {
+        setLoading(!loading)
         const funcionAsincrona=async()=>{
+          
             const peticion=await getProductos();
             console.log('peticion',peticion)
             const productoFiltrado=peticion.find(prod=>prod.item===parseInt(itemProducto))
@@ -22,15 +24,17 @@ export const ItemDetailContainer = () => {
             setProductoState(productoFiltrado)
             
             console.log('productos',productoState)
+          }
+          funcionAsincrona()
         }
-        funcionAsincrona()
+          , 1500);
 
-    },[])
+        },[])
 
 
   return (
     <div>
-    <ItemDetail producto={productoState}/>
+    <ItemDetail loading={loading} producto={productoState}/>
     </div>
   )
 }

@@ -5,14 +5,13 @@ import { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../Context/CartContext'
 
-export const ItemDetail = ({producto}) => {
+export const ItemDetail = ({producto, loading}) => {
   const {sumaProductosAlCarrito}=useContext(CartContext)
 
   const agregarAlCarrito=(counter)=>{
-    alert('cantidad items en detail: '+counter)
-    const nuevoProducto={...producto,cantidad:counter}
+    const nuevoProducto={...producto,cantidad:counter}//aca le estoy agregando una propiedad "cantidad" al objeto para poder pasarle la variable counter
     console.log(nuevoProducto)
-    sumaProductosAlCarrito(nuevoProducto)
+    sumaProductosAlCarrito(nuevoProducto) 
 
 }
 
@@ -20,7 +19,12 @@ export const ItemDetail = ({producto}) => {
     <div className='contenedorDetail'>
       <h1>Detalle del producto</h1>
       <div className='tarjetaDetail'>
-        <img className="imagenDetail"src={producto.imagen} alt=""/>
+        {loading?
+        <h1 className="imagenDetail">Loading</h1>
+      :
+      <img className="imagenDetail"src={producto.imagen} alt=""/>
+
+      }
         <div className='textosDetail'>
           <p>Producto: {producto.nombre}</p>
           <p>Descripcion: {producto.descripcion}</p>

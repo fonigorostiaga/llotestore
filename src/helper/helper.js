@@ -103,10 +103,10 @@ const productos=[
 ]
 const getProductos =()=>{
     return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
+      
             resolve(productos);
             reject(error=>console.log(error))
-        },1000)
+       
     })
 }
 export default getProductos
