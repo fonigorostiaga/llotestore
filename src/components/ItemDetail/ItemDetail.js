@@ -4,6 +4,7 @@ import '../../styles.css'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../Context/CartContext'
+import cargando from '../../assets/loading.gif'
 
 export const ItemDetail = ({producto, loading}) => {
   const {sumaProductosAlCarrito}=useContext(CartContext)
@@ -20,7 +21,7 @@ export const ItemDetail = ({producto, loading}) => {
       <h1>Detalle del producto</h1>
       <div className='tarjetaDetail'>
         {loading?
-        <h1 className="imagenDetail">Loading</h1>
+        <img className="imagenDetail"src={cargando} alt=""/>
       :
       <img className="imagenDetail"src={producto.imagen} alt=""/>
 
@@ -28,7 +29,7 @@ export const ItemDetail = ({producto, loading}) => {
         <div className='textosDetail'>
           <p>Producto: {producto.nombre}</p>
           <p>Descripcion: {producto.descripcion}</p>
-          <p>Precio: {producto.precio}</p>
+          <p>Precio: ${producto.precio}</p>
         </div>
         
         <div className="counterDetail">

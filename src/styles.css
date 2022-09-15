@@ -227,3 +227,11 @@ button:hover{
 .botonEliminarProducto{
     margin-right: 5%;
 }
+.contenedorTotalCarritoCard{
+    width: 20%;
+    border: 1.5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding: 15px;
+}

@@ -8,6 +8,7 @@ import remeraHombreLloteRelax from '../../assets/remeraHombreLloteRelax.png'
 import remeraHombreLloteCubo from '../../assets/remeraHombreLloteCubo.png'
 import remeraLluvia from '../../assets/remeraHombreLluviablanca.png'
 import remeraPixelada from '../../assets/remeraPixelada.png'
+import cargando from '../../assets/loading.gif'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import getProductos from '../../helper/helper'
@@ -49,7 +50,9 @@ export const ItemContainer=()=>{
 return(
     <>
       {loading?
-      <h1>CARGANDO</h1>
+      <div>
+        <img src={cargando} alt="cargando"></img>
+      </div>
 
       :
         <div className='contenedorDeTarjetas'>

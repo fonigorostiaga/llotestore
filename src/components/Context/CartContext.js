@@ -6,15 +6,25 @@ export const CartContext = createContext();
 export const CartProvider=({children})=>{
     const [productosCarrito, setProductosCarrito]=useState([])
     const [totalProductos, setTotalProductos]=useState(0)
+    const [precioTotal, setPrecioTotal]=useState(0)
     const calcularTotalProductos=(producto)=>{
         const sumaProductos=producto.cantidad
         const acumulador=sumaProductos+totalProductos
         setTotalProductos(acumulador)
+
     }
     const isinCart=(producto)=>{
         return(
         productosCarrito.some(el=>el.item===producto.item)
     )}
+            const calcularPrecioTotal=(array)=>{
+                let acumuladorPrecio=0
+                for(let i of array){
+                    acumuladorPrecio=acumuladorPrecio+(i.cantidad*i.precio)
+                    
+                }
+                setPrecioTotal(acumuladorPrecio)
+            }
     
     const sumaProductosAlCarrito=(producto)=>{
         if(isinCart(producto)){
@@ -26,12 +36,14 @@ export const CartProvider=({children})=>{
             const carritoModificado=productosCarrito.filter(el=>el.item!==producto.item)
             const nuevoArray=[...carritoModificado,productoRepetido[0]]
             setProductosCarrito(nuevoArray)
+            calcularPrecioTotal(nuevoArray)
         }else{
 
         calcularTotalProductos(producto)
 
         const nuevaLista=[...productosCarrito,producto]
         setProductosCarrito(nuevaLista)
+        calcularPrecioTotal(nuevaLista)
 
 }
     }
@@ -40,13 +52,15 @@ export const CartProvider=({children})=>{
         const nuevoArray=pedidoModificado.filter(el=>el.item!==productoEliminado.item)
         const cantidadModificada=totalProductos
         const nuevoTotal=cantidadModificada-productoEliminado.cantidad
+
         setTotalProductos(nuevoTotal)
         setProductosCarrito(nuevoArray)
+        calcularPrecioTotal(nuevoArray)
     }
 
     return(
         <CartContext.Provider value={
-            {productosCarrito, sumaProductosAlCarrito, eliminarProducto, totalProductos}
+            {productosCarrito, sumaProductosAlCarrito, eliminarProducto, totalProductos, precioTotal}
         
         }>
             

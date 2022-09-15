@@ -6,8 +6,12 @@ import '../../styles.css'
 import icono from '../../assets/icono.png'
 import {Outlet, Link} from 'react-router-dom'
 import { CarritoWidget } from '../cartwidget/CarritoWidget';
+import { useContext } from 'react';
+import { CartContext } from '../Context/CartContext';
+
 
 function BasicExample() {
+  const {totalProductos}=useContext(CartContext)
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
@@ -31,7 +35,12 @@ function BasicExample() {
             
 
           </Nav>
-            <CarritoWidget/>
+          {(totalProductos>0)?
+          <CarritoWidget/>
+          :
+          null
+          }
+            
         </Navbar.Collapse>
       </Container>
     </Navbar>

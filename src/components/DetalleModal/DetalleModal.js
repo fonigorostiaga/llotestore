@@ -25,7 +25,7 @@ export const DetalleModal = ({item}) => {
                 <div className='textosDetail'>
                 <p>Producto: {item.nombre}</p>
                 <p>Descripcion: {item.descripcion}</p>
-                <p>Precio: {item.precio}</p>
+                <p>Precio: ${item.precio}</p>
                 <Link to={`/productos/item/${item.item}`} className="linkTarjeta">
                 <button className="botonComprar">Comprar</button></Link>
             </div>
