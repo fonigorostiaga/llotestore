@@ -12,7 +12,7 @@ import cargando from '../../assets/loading.gif'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import getProductos from '../../helper/helper'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import {db} from '../../utils/firebase'
 
 
@@ -26,19 +26,25 @@ export const ItemContainer=()=>{
             
             const funcionAsincrona=async()=>{
                 try {
+                    if(tipoProducto===undefined){
                     const query=collection(db,"productos")
                     const response=await getDocs(query)
                     const elementos=response.docs
                     const arrayProductos=elementos.map(item=>{return{...item.data(),item:item.id}})
                     console.log(arrayProductos)
-                    if(tipoProducto===undefined){
+                    
                         setLoading(false)
                         setProducto(arrayProductos)
                     }else{
                         setLoading(false)
+                        const queryRef=query(collection(db,"productos"), where("producto","==",tipoProducto));
+                        const response=await getDocs(queryRef) 
+                        
+                        const elementos=response.docs
 
-                        const productosFiltrados=arrayProductos.filter(el=>el.producto===tipoProducto)
-                        setProducto(productosFiltrados)
+                        const arrayProductosFilstrados=elementos.map(item=>{return{...item.data(),item:item.id}})
+                        setProducto(arrayProductosFilstrados)
+                        
                     }
                 } catch (error) {
                     alert("hubo un error")
