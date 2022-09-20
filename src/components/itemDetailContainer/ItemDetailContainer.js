@@ -2,7 +2,8 @@ import {React, useState, useEffect} from 'react'
 import getProductos from '../../helper/helper'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-
+import {db} from '../../utils/firebase'
+import { collection, getDocs, doc, getDoc } from 'firebase/firestore'
 
 
 export const ItemDetailContainer = () => {
@@ -11,25 +12,22 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading]=useState(true)
   console.log('itemproducto',itemProducto)
 
+useEffect(()=>{
+  setTimeout(() => {
+    const getDocumento=async()=>{
+      setLoading(!loading)
+      const query=doc(db,"productos",itemProducto);
+      const response=await getDoc(query)
+      const productoFiltrado={...response.data(),item:response.id}
+      setProductoState(productoFiltrado)
+    }
+    getDocumento()
+  }, 1500);
 
-    useEffect(()=>{
-      setTimeout(() => {
-        setLoading(!loading)
-        const funcionAsincrona=async()=>{
-          
-            const peticion=await getProductos();
-            console.log('peticion',peticion)
-            const productoFiltrado=peticion.find(prod=>prod.item===parseInt(itemProducto))
-            
-            setProductoState(productoFiltrado)
-            
-            console.log('productos',productoState)
-          }
-          funcionAsincrona()
-        }
-          , 1500);
 
-        },[])
+
+
+},[])
 
 
   return (

@@ -8,6 +8,7 @@ import ItemCount from './components/itemCount/ItemCount';
 import {useState} from 'react'
 import { Carrito } from './components/cartwidget/Carrito';
 import { CartProvider } from './components/Context/CartContext';
+import { Firebase } from './components/Firebase/Firebase';
 function App() {
 
   return (
@@ -25,7 +26,7 @@ function App() {
       <Route path='/productos/:tipoProducto' element={<ItemContainer/>}/>
       <Route path='/productos/s tickers' element={<ItemContainer/>}/>
       <Route path='/productos/item/:itemProducto'element={<ItemDetailContainer/>}/>
-
+      <Route path='/firebase' element={<Firebase/>}/> 
       
 
     </Routes> 

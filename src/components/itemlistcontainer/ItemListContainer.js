@@ -12,6 +12,8 @@ import cargando from '../../assets/loading.gif'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import getProductos from '../../helper/helper'
+import { collection, getDocs } from 'firebase/firestore'
+import {db} from '../../utils/firebase'
 
 
 
@@ -21,28 +23,28 @@ export const ItemContainer=()=>{
     const [loading, setLoading]=useState(true)
 
     useEffect(()=>{
-        setTimeout(() => {
             
             const funcionAsincrona=async()=>{
                 try {
-                    const catalogo=await getProductos()
+                    const query=collection(db,"productos")
+                    const response=await getDocs(query)
+                    const elementos=response.docs
+                    const arrayProductos=elementos.map(item=>{return{...item.data(),item:item.id}})
+                    console.log(arrayProductos)
                     if(tipoProducto===undefined){
                         setLoading(false)
-                        setProducto(catalogo)
+                        setProducto(arrayProductos)
                     }else{
                         setLoading(false)
 
-                        const productosFiltrados=catalogo.filter(el=>el.producto===tipoProducto)
-                        console.log('nuevalista',productosFiltrados)
+                        const productosFiltrados=arrayProductos.filter(el=>el.producto===tipoProducto)
                         setProducto(productosFiltrados)
-                        console.log(catalogo)
                     }
                 } catch (error) {
                     alert("hubo un error")
                 }
             }
             funcionAsincrona();     
-        }, 1500);
         
 
     },[tipoProducto])
