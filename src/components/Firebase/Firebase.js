@@ -18,7 +18,6 @@ export const Firebase = () => {
             }})
             setArregloProductos(productos)
             
-            console.log(arregloProductos)
         }   
         getData()
     },[])

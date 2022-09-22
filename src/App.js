@@ -9,6 +9,7 @@ import {useState} from 'react'
 import { Carrito } from './components/cartwidget/Carrito';
 import { CartProvider } from './components/Context/CartContext';
 import { Firebase } from './components/Firebase/Firebase';
+import { Salida } from './components/cartwidget/Salida';
 function App() {
 
   return (
@@ -27,8 +28,8 @@ function App() {
       <Route path='/productos/s tickers' element={<ItemContainer/>}/>
       <Route path='/productos/item/:itemProducto'element={<ItemDetailContainer/>}/>
       <Route path='/firebase' element={<Firebase/>}/> 
+      <Route path='/salida' element={<Salida/>}/>
       
-
     </Routes> 
 
   

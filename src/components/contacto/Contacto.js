@@ -5,8 +5,7 @@ import { ItemContainer } from '../itemlistcontainer/ItemListContainer'
 export const Contacto = () => {
     const [clickeaste,setClick]=useState(false)
 const clickHecho =()=>{
-  setClick(!clickeaste)
-  console.log(clickeaste)
+  window.location.href='/productos'
 }
 
   return (

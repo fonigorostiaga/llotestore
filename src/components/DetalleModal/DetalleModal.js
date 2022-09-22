@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 
 export const DetalleModal = ({item}) => {
   const agregarAlCarrito=()=>{
-    alert('producto agregado al carrito')
   }
   const prevent=(e)=>{
     e.stopPropagation()

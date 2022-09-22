@@ -164,7 +164,7 @@ button:hover{
     transition: 1.2s
 }
 
-.backGroundModal{
+.backGroundModal, .contenedorSalida{
     background-color: rgba(0, 0, 0, 0.493);
     top:0;
     width: 100%;
@@ -176,7 +176,7 @@ button:hover{
     text-align: center;
     padding:35px;
 }
-.detalleModal{
+.detalleModal, .textosSalida{
     background-color: white;
         border-radius:15px ;
         padding: 40px;
@@ -234,4 +234,77 @@ button:hover{
     margin-right: auto;
     margin-top: 25px;
     padding: 15px;
+}
+.contenedorForm{
+    background-color: rgba(0, 0, 0, 0.493);
+    top:0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.contenedorForm form{
+    margin-top: 15%;
+    border: solid 1px;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background-color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+   
+}
+.contenedorForm form input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+.tarjeta{
+    width: 65%;
+}
+.vto{
+    display: block;
+}
+.vtoInput{
+    width: 25%;
+    margin-right:3%;
+}
+.codInput{
+    width: 40%;
+}
+.vencimiento{
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    
+}
+.cancelar{
+    margin-left: 15px;
+}
+.contenedorContinuar{
+    margin-top: 15px;
+    display: flex;
+       
+    align-items: center;
+    text-align: center;
+    justify-content: center
+}
+.botonesContinuar{
+    margin-left: 15px;
+}
+.crearOrden{
+    margin-top:25px ;
+}
+.botonSalir{
+    margin-left: 35px;
 }

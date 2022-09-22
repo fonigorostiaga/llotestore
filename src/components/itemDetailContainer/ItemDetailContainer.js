@@ -4,13 +4,14 @@ import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import {db} from '../../utils/firebase'
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore'
-
+import { Link } from 'react-router-dom'
 
 export const ItemDetailContainer = () => {
     const {itemProducto}=useParams()
     const [productoState, setProductoState]=useState({})
   const [loading, setLoading]=useState(true)
-  console.log('itemproducto',itemProducto)
+  const {continuar, setContinuar}=useState(true)
+
 
 useEffect(()=>{
   setTimeout(() => {
@@ -33,6 +34,7 @@ useEffect(()=>{
   return (
     <div>
     <ItemDetail loading={loading} producto={productoState}/>
+
     </div>
   )
 }

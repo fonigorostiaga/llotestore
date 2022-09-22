@@ -7,7 +7,6 @@ import { CartContext } from '../Context/CartContext'
 
 export const CarritoWidget = () => {
     const {productosCarrito, totalProductos}=useContext(CartContext)
-    console.log(productosCarrito.length)
     
     return(
         <Link to='/carrito'>

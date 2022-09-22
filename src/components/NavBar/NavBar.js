@@ -20,6 +20,7 @@ function BasicExample() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/productos"className="link">LloteStudio</Nav.Link>
+
             <Nav.Link as={Link} to="/contacto" className="link">Contacto</Nav.Link>
             <NavDropdown className="link" title="Productos" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/productos/remeras">Remeras</NavDropdown.Item>

@@ -31,7 +31,6 @@ export const ItemContainer=()=>{
                     const response=await getDocs(query)
                     const elementos=response.docs
                     const arrayProductos=elementos.map(item=>{return{...item.data(),item:item.id}})
-                    console.log(arrayProductos)
                     
                         setLoading(false)
                         setProducto(arrayProductos)
