@@ -1,31 +1,29 @@
+import { doc, getDoc } from 'firebase/firestore'
 import React from 'react'
+import { useContext } from 'react'
 import { useState } from 'react'
 import '../../styles.css'
+import {db} from '../../utils/firebase'
+import { CartContext } from '../Context/CartContext'
 import { ItemContainer } from '../itemlistcontainer/ItemListContainer'
 export const Contacto = () => {
-    const [clickeaste,setClick]=useState(false)
-const clickHecho =()=>{
-  window.location.href='/productos'
-}
+  const {productosCarrito}=useContext(CartContext)
+  const corregirStock=()=>{
+    for(let producto of productosCarrito){
+      console.log(producto)
+    }
+    // for(let i=0;i=productosCarrito.length;i++){
+    //   console.log(productosCarrito[i])
+    //   const query=doc(db,"productos", productosCarrito[i].item)
+    //   const hola= await getDoc(query)
+    // const chau={...hola.data(),item:hola.id, stock:10}
+    // console.log(chau)}
+    }
 
   return (
 
     <div>
-      <button onClick={clickHecho}>click</button>
-{
-      clickeaste ?
-        <div className='backgroundModal'>
+      <button onClick={corregirStock}>click</button>
 
-
-
-            <ItemContainer/>
-      <button onClick={clickHecho}>salir</button>
-          </div>
-
-          :
-          null
-        
-}
     </div>
-  )
-}
+  )}

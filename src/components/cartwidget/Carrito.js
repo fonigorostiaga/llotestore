@@ -7,7 +7,7 @@ import { TotalCarritoCard } from './TotalCarritoCard'
 import '../../styles.css'
 import { CarritoForm } from './CarritoForm'
 import {db} from '../../utils/firebase'
-import { addDoc, collection, doc, Timestamp, updateDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, Timestamp, updateDoc } from 'firebase/firestore'
 import {ModalCarrito} from './ModalCarrito'
 import {Salida} from './Salida'
 
@@ -30,6 +30,20 @@ else{
   alert("No incluiste ningun item a tu orden")
 }}
 
+const corregirStock=async()=>{
+for(let producto of productosCarrito){
+  const cantidad=producto.cantidad;
+  
+  const query=doc(db,"productos", producto.item)
+  const productoPedido= await getDoc(query)
+const productoModificado={...productoPedido.data(),item:productoPedido.id}
+productoModificado.stock=productoModificado.stock-cantidad
+console.log(productoModificado)
+updateDoc(query, productoModificado)
+}
+
+}
+
 
 const cambiarModal=()=>{
   const queryRef=doc(db, "orders", idPedido);
@@ -39,8 +53,7 @@ const cambiarModal=()=>{
   setModal(!modal)
   vaciarCarrito()
   setPedidoPagado(!pedidoPagado)
-
-
+  corregirStock()
 }
 
 const cancelar=()=>{

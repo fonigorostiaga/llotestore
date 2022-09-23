@@ -11,9 +11,9 @@ const setUser=(e)=>{
   const pedido={
       nombre:e.target[0].value,
       apodo:e.target[1].value,
-      direccion:e.target[1].value,
-      telefono:e.target[1].value,
-      mail:e.target[1].value,
+      direccion:e.target[2].value,
+      telefono:e.target[3].value,
+      mail:e.target[4].value,
     }
 
 

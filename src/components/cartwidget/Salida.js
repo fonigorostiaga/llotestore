@@ -12,7 +12,7 @@ export const Salida = () => {
         <h1>¡Muchas gracias por tu compra!</h1>
         <p>Te enviamos un correo electronico con los detalles de tu pedido para que puedas hacerle seguimiento.</p>
         
-        <Link to='/productos'><button>Continuar como {order.buyer.nombre}</button></Link>
+        <Link to='/productos'><button>Continuar como {order.buyer.apodo}</button></Link>
         <button className='botonSalir'>Salir</button>
         </div>
     </div>
