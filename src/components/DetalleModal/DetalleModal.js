@@ -22,9 +22,9 @@ export const DetalleModal = ({item}) => {
                 <div className='tarjetaDetail'>
                 <img className="imagenDetail"src={item.imagen} alt=""/>
                 <div className='textosDetail'>
-                <p>Producto: {item.nombre}</p>
-                <p>Descripcion: {item.descripcion}</p>
-                <p>Precio: ${item.precio}</p>
+                <p>Producto: <b>{item.nombre}</b></p>
+                <p>Descripcion:<b> {item.descripcion}</b></p>
+                <p>Precio:<b> ${item.precio}</b></p>
                 <Link to={`/productos/item/${item.item}`} className="linkTarjeta">
                 <button className="botonComprar">Comprar</button></Link>
             </div>

@@ -12,7 +12,7 @@ export const ModalCarrito = ({idPedido, cambiarModal, cancelar,pedido}) => {
       <p>Entrega a nombre de: {pedido.buyer.nombre}</p>
       <p>Cantidad de Items {pedido.items.length}</p>
       <div className='pago'> 
-          <input type='number' min='370000000000000'max='9999999999999999'className="tarjeta" placeholder='numero de tarjeta' required/>
+          <input type='number'placeholder='numero de tarjeta' required/>
           
           <div className='vencimiento'>
           <input type='number' min='1' max='12'className='vtoInput' placeholder='MM' required/><input type='number' min='22' max='28'className='vtoInput' placeholder='AA' required/>

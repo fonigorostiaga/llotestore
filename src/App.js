@@ -25,7 +25,6 @@ function App() {
       <Route path='/productos' element={<ItemContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
       <Route path='/productos/:tipoProducto' element={<ItemContainer/>}/>
-      <Route path='/productos/s tickers' element={<ItemContainer/>}/>
       <Route path='/productos/item/:itemProducto'element={<ItemDetailContainer/>}/>
       <Route path='/firebase' element={<Firebase/>}/> 
       <Route path='/salida' element={<Salida/>}/>

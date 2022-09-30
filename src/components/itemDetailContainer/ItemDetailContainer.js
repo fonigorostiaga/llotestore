@@ -23,7 +23,7 @@ useEffect(()=>{
       setProductoState(productoFiltrado)
     }
     getDocumento()
-  }, 1500);
+  }, 2000);
 
 
 

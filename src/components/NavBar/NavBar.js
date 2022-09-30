@@ -29,7 +29,7 @@ function BasicExample() {
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/productos/stickers">Stickers</NavDropdown.Item>
               
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item as={Link} to="/productos/tazas" href="#action/3.4">
                 Tazas
               </NavDropdown.Item>
             </NavDropdown>

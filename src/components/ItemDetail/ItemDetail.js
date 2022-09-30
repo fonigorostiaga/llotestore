@@ -30,9 +30,9 @@ export const ItemDetail = ({producto, loading}) => {
 
       }
         <div className='textosDetail'>
-          <p>Producto: {producto.nombre}</p>
-          <p>Descripcion: {producto.descripcion}</p>
-          <p>Precio: ${producto.precio}</p>
+          <p>Producto: <b>{producto.nombre}</b></p>
+          <p>Descripcion:<b> {producto.descripcion}</b></p>
+          <p>Precio:<b> ${producto.precio}</b></p>
         </div>
         
         <div className="counterDetail">
